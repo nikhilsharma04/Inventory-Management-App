@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "810136543194",
+    "firebase_url": "https://inventorymanagement-ea149.firebaseio.com",
+    "project_id": "inventorymanagement-ea149",
+    "storage_bucket": "inventorymanagement-ea149.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810136543194:android:80fd57ee1f0b16ee",
+        "android_client_info": {
+          "package_name": "com.example.saket.inventorymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810136543194-vecansakl19h2h5u58vs04g6hf6gqjbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1XSADVOPO6CG9SzD4wAE7I8eZjLtnTR0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
