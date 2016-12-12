@@ -10,6 +10,7 @@
     tools:context="com.example.saket.inventorymanagement.SignUpActivity">
 
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -17,6 +18,28 @@
         android:background="@drawable/side_nav_bar"
         android:gravity="center"
         android:padding="@dimen/activity_horizontal_margin">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/white"
+                android:textColor="@android:color/white"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -59,6 +82,30 @@
 
         </android.support.design.widget.TextInputLayout>
 
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/white"
+            app:passwordToggleTint="?colorControlNormal">
+
+            <EditText
+                android:id="@+id/confirm_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColorHint="@color/white"
+                android:singleLine="true"
+                android:imeActionId="@+id/login"
+                android:focusableInTouchMode="true"
+                android:imeOptions="actionUnspecified"
+                android:hint="Confirm password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"/>
+
+        </android.support.design.widget.TextInputLayout>
+
         <Button
             android:id="@+id/sign_up_button"
             style="?android:textAppearanceSmall"
@@ -82,7 +129,13 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="15dp" />
+
+
+
+
     </LinearLayout>
+
+
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -91,6 +144,18 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="20dp"
         android:visibility="gone" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 </android.support.design.widget.CoordinatorLayout>
 
