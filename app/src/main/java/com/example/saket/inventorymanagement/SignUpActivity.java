@@ -2,11 +2,13 @@ package com.example.saket.inventorymanagement;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by saket on 12/11/16.
@@ -29,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    private FirebaseUser user;
     private String email , pass;
 
 
@@ -42,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp = (Button)findViewById(R.id.sign_up_button);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         auth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,15 +83,28 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 progressBar.setVisibility(View.GONE);
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
+                                    Toast.makeText(SignUpActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                                 else {
-                                    Toast.makeText(SignUpActivity.this ,"Successfully registered" , Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(SignUpActivity.this , MainActivity.class));
-                                    finish();
+
+                                    user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(SignUpActivity.this, "We have sent you instructions to confirm your authentication!", Toast.LENGTH_SHORT).show();
+
+                                            } else {
+                                                Toast.makeText(SignUpActivity.this, "Failed to send confirgation email!", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                        }
+                                    });
+
+                                    }
                                 }
-                            }
+
                         });
 
 
