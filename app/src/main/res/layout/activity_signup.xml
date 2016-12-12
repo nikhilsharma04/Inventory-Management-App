@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,13 +14,14 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/side_nav_bar"
         android:gravity="center"
         android:padding="@dimen/activity_horizontal_margin">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white">
 
             <EditText
                 android:id="@+id/email"
@@ -29,6 +31,7 @@
                 android:singleLine="true"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
+                android:textColorHint="@color/white"
                 android:textColor="@android:color/white"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -37,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:textColorHint="@color/white"
             app:passwordToggleTint="?colorControlNormal">
 
             <EditText
@@ -44,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:textColorHint="@color/white"
                 android:singleLine="true"
                 android:imeActionId="@+id/login"
                 android:focusableInTouchMode="true"
@@ -60,9 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="#60580818"
             android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <!-- Link to Login Screen -->

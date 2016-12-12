@@ -33,6 +33,11 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        <activity android:name=".DataBaseActivity"
+            android:label="New Product"
+            android:parentActivityName=".MainActivity"
+
+            ></activity>
 
 
     </application>

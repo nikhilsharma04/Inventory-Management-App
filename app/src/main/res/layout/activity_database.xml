@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/select_image"
+            android:src="@drawable/ic_menu_camera"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bar_code"
+            android:background="#ffff"
+            android:layout_marginLeft="300dp"
+            android:textCursorDrawable="@color/black"
+            android:layout_marginTop="250dp"
+            android:src="@mipmap/ic_action_barcode_1"/>
+
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/product_code"
+            android:layout_marginTop="220dp"
+            android:hint="Product code"
+            android:maxLines="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="120dp"
+            android:textCursorDrawable="@null"
+            android:backgroundTint="#dc143c"
+            android:paddingTop="20dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#dc143c"
+            android:id="@+id/product_name"
+            android:hint="Product Name"
+            android:maxLines="1"
+            android:layout_marginTop="280dp"
+            android:inputType="textShortMessage"
+            android:textCursorDrawable="@null"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:minWidth="80dp"
+            android:maxLines="1"
+            android:maxWidth="80dp"
+            android:id="@+id/product_description"
+            android:backgroundTint="#dc143c"
+            android:paddingTop="20dp"
+            android:layout_marginTop="340dp"
+            android:textCursorDrawable="@null"
+            android:hint="Product Description"
+            android:inputType="textShortMessage"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:maxLines="1"
+            android:layout_height="match_parent"
+            android:minWidth="80dp"
+            android:maxWidth="80dp"
+            android:id="@+id/product_price"
+            android:paddingTop="20dp"
+            android:hint="Product Price"
+            android:textCursorDrawable="@null"
+            android:layout_marginTop="400dp"
+            android:backgroundTint="#dc143c"
+            android:inputType="numberDecimal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>
