@@ -28,25 +28,27 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    private EditText inputEmail, inputPassword , inputName , inputConfirmPassword;
     private Button btnSignIn, btnSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private FirebaseUser user;
-    private String email , pass;
+    private FirebaseUser user1;
+    private String email , pass , person_name , confirmPass;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        inputName = (EditText)findViewById(R.id.name);
         inputEmail = (EditText)findViewById(R.id.email);
         inputPassword = (EditText)findViewById(R.id.pass);
+        inputConfirmPassword = (EditText)findViewById(R.id.confirm_pass);
         btnSignIn = (Button)findViewById(R.id.sign_in_button);
         btnSignUp = (Button)findViewById(R.id.sign_up_button);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         auth = FirebaseAuth.getInstance();
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        user1 = FirebaseAuth.getInstance().getCurrentUser();
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +59,11 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+                person_name = inputName.getText().toString().trim();
                 email = inputEmail.getText().toString().trim();
                 pass = inputPassword.getText().toString().trim();
+                confirmPass = inputConfirmPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)){
                     Toast.makeText(getBaseContext() , "Enter email Address" , Toast.LENGTH_LONG).show();
@@ -75,6 +80,11 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (!confirmPass.equals(pass)){
+                    Toast.makeText(getApplicationContext() , "Password didn't matched" , Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
                 auth.createUserWithEmailAndPassword(email , pass)
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
@@ -88,7 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                                 else {
 
-                                    user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    user1.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 

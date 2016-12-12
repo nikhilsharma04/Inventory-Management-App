@@ -30,7 +30,8 @@
 
         <activity android:name=".SignUpActivity"
             android:label="StockBox"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="userPortrait">
 
         </activity>
         <activity android:name=".DataBaseActivity"

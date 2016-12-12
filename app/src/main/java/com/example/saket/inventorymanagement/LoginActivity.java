@@ -33,9 +33,17 @@ public class LoginActivity extends AppCompatActivity {
     private String email , pass;
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Get Firebase auth instance
+        auth_lgn = FirebaseAuth.getInstance();
+
+        if (auth_lgn.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
         setContentView(R.layout.activity_login);
         auth_lgn = FirebaseAuth.getInstance();
         inputEmail_lgn = (EditText)findViewById(R.id.email_lgn);
