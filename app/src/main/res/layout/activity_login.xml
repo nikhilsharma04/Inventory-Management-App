@@ -9,17 +9,19 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.saket.inventorymanagement.LoginActivity">
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/side_nav_bar"
         android:gravity="center"
         android:padding="@dimen/activity_horizontal_margin">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white">
 
             <EditText
                 android:id="@+id/email_lgn"
@@ -28,6 +30,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:hint="@string/email"
+                android:textColorHint="@color/white"
                 android:inputType="textEmailAddress"
                 android:textColor="@android:color/white"/>
 
@@ -37,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:textColorHint="@color/white"
             app:passwordToggleTint="?colorControlNormal">
 
             <EditText
@@ -60,9 +64,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="#60580818"
             android:text="@string/btn_login"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <!-- Link to Regiter Screen -->
