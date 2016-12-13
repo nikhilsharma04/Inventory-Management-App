@@ -21,11 +21,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bar_code"
-            android:background="#ffff"
-            android:layout_marginLeft="300dp"
-            android:textCursorDrawable="@color/black"
-            android:layout_marginTop="250dp"
+            android:id="@+id/read_barcode"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="245dp"
             android:src="@mipmap/ic_action_barcode_1"/>
 
 
@@ -39,6 +37,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="120dp"
             android:textCursorDrawable="@null"
+            android:inputType="textShortMessage"
             android:backgroundTint="#dc143c"
             android:paddingTop="20dp" />
 
